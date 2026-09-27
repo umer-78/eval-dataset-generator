@@ -1,20 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-scene="clusters">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eval Dataset Generator · Umer Hashmi</title>
   <meta name="description" content="Turning production logs into a versioned evaluation set: deduplicate, cluster, and spend a labelling budget where the model fails, with weights that keep the accuracy estimate honest.">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="kit.css">
-  <style>:root { --accent: #7c3aed; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #c4b5fd; --on-accent: #0f0e0c; } }</style>
+  <link rel="stylesheet" href="fx.css">
+  <style>:root { --accent: #7c3aed; --fx-2: #06b6d4; --fx-3: #f59e0b; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #c4b5fd; --on-accent: #0f0e0c; } }</style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <a class="crumb" href="https://umer-78.github.io/">← All projects</a>
+    <nav class="fx-nav" aria-label="On this page"><a class="fx-home" href="https://umer-78.github.io/">← All projects</a><a class="fx-gh" href="https://github.com/umer-78/eval-dataset-generator">GitHub</a></nav>
+    <header class="fx-hero">
+      <span class="fx-eyebrow">LLM engineering · Python</span>
       <h1>Eval Dataset Generator</h1>
       <p class="lede">The best evaluation set comes from your own traffic, but nobody can label all of it. This pipeline redacts and deduplicates logged messages, clusters them, and picks which ones to label: spread over the clusters, and tilted toward outliers and low-confidence answers, where the model fails most. Every case carries a weight, so the accuracy measured on the set still estimates accuracy on all the traffic. Below: 3,080 logged banking questions, a budget of 200 labels, 300 draws per strategy.</p>
       <div class="links"><a class="btn primary" href="#strategies">Compare the strategies</a><a class="btn" href="https://github.com/umer-78/eval-dataset-generator">Code and method</a></div>
+      <div class="fx-tags" aria-hidden="true"><div><span>python</span><span>llm</span><span>evaluation</span><span>sampling</span><span>clustering</span><span>pii</span><span>python</span><span>llm</span><span>evaluation</span><span>sampling</span><span>clustering</span><span>pii</span></div></div>
     </header>
     <main>
       <section class="kpis" id="kpis"></section>
@@ -40,5 +47,6 @@
     <footer>Built by <a href="https://github.com/umer-78">Umer Hashmi</a> · Messages from <a href="https://github.com/PolyAI-LDN/task-specific-datasets">Banking77</a> (PolyAI, CC BY 4.0), downloaded at run time · Embeddings: bge-small-en-v1.5 (BAAI, MIT)</footer>
   </div>
   <script type="module" src="app.js"></script>
+  <script type="module" src="fx.js"></script>
 </body>
 </html>
