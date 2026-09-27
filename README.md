@@ -1,5 +1,7 @@
 # eval-dataset-generator
 
+**Live demo:** https://umer-78.github.io/eval-dataset-generator/ (three ways to spend a labelling budget, and why every case carries a weight)
+
 It turns production LLM logs into an evaluation set that is worth labelling:
 
 - **Ingest and redact.** Logs are ingested into one schema, validated and deduplicated. PII (emails, card numbers passing the Luhn check, IBANs, phone numbers) is redacted before storage.
@@ -50,6 +52,7 @@ version = write([{"prompt": entries[i].prompt, "production_answer": entries[i].r
 pip install -e '.[dev]'
 pytest -q
 python -m evalgen bench
+python -m evalgen.demo    # rebuild the live demo's data in docs/
 ```
 
 Banking77 and the bge-small model, each pinned by SHA-256, are downloaded on first use into `~/.cache/evalgen`; nothing is committed.

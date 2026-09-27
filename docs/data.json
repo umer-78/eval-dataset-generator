@@ -1,0 +1,53 @@
+{
+ "logs": 3080,
+ "near_duplicates_dropped": 400,
+ "candidates": 2680,
+ "clusters": 71,
+ "outliers": 986,
+ "model_accuracy": 0.9264925373134328,
+ "failure_rate_outliers": 0.12576064908722107,
+ "failure_rate_clustered": 0.04309327036599764,
+ "intents": 77,
+ "budget": 200,
+ "reps": 300,
+ "strategies": {
+  "uniform": {
+   "cases": 199.81,
+   "failures": 14.78,
+   "intents": 71.62666666666667,
+   "clusters": 49.79,
+   "rmse": 0.019841829001966037,
+   "bias": -0.0004971954818912931,
+   "naive_bias": -0.0004971954818912772
+  },
+  "stratified": {
+   "cases": 200.41666666666666,
+   "failures": 13.973333333333333,
+   "intents": 71.53666666666666,
+   "clusters": 53.78,
+   "rmse": 0.018919703850981382,
+   "bias": 0.00027671191435574505,
+   "naive_bias": 0.0037866503442239535
+  },
+  "boosted": {
+   "cases": 199.55666666666667,
+   "failures": 25.64,
+   "intents": 70.23333333333333,
+   "clusters": 37.876666666666665,
+   "rmse": 0.014341042663795045,
+   "bias": -0.00159018996848426,
+   "naive_bias": -0.055159805745428774
+  }
+ },
+ "version": "f7d919c2590b",
+ "cluster_names": [
+  "transfer / long / pending",
+  "exchange / currencies / currency",
+  "reverted / pending / working",
+  "identity / verify / check",
+  "atm / cash / didn",
+  "virtual / disposable / card",
+  "rate / exchange / wrong",
+  "payment / declined / card"
+ ]
+}

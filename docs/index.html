@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eval Dataset Generator · Umer Hashmi</title>
+  <meta name="description" content="Turning production logs into a versioned evaluation set: deduplicate, cluster, and spend a labelling budget where the model fails, with weights that keep the accuracy estimate honest.">
+  <link rel="stylesheet" href="kit.css">
+  <style>:root { --accent: #7c3aed; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #c4b5fd; --on-accent: #0f0e0c; } }</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="crumb" href="https://umer-78.github.io/">← All projects</a>
+      <h1>Eval Dataset Generator</h1>
+      <p class="lede">The best evaluation set comes from your own traffic, but nobody can label all of it. This pipeline redacts and deduplicates logged messages, clusters them, and picks which ones to label: spread over the clusters, and tilted toward outliers and low-confidence answers, where the model fails most. Every case carries a weight, so the accuracy measured on the set still estimates accuracy on all the traffic. Below: 3,080 logged banking questions, a budget of 200 labels, 300 draws per strategy.</p>
+      <div class="links"><a class="btn primary" href="#strategies">Compare the strategies</a><a class="btn" href="https://github.com/umer-78/eval-dataset-generator">Code and method</a></div>
+    </header>
+    <main>
+      <section class="kpis" id="kpis"></section>
+      <section class="card">
+        <h2>From logs to candidates</h2>
+        <p class="sub">What happens to the traffic before a single label is spent.</p>
+        <div id="funnel"></div>
+        <p class="small muted" id="clusters"></p>
+      </section>
+      <section class="card" id="strategies">
+        <h2>Three ways to spend 200 labels</h2>
+        <p class="sub"><b>Uniform</b>: a random sample. <b>Stratified</b>: spread across clusters. <b>Boosted</b>: stratified, with outliers and low-confidence answers drawn more often. Means over 300 draws each.</p>
+        <div class="controls"><label>Measure</label><div id="metric"></div></div>
+        <div id="bars"></div>
+        <p class="small muted" id="metricNote"></p>
+      </section>
+      <section class="card">
+        <h2>Why every case carries a weight</h2>
+        <p class="sub">Boosted sampling finds failures by oversampling them, so a plain average over the set understates accuracy. Weighting each case by the inverse of its chance of being drawn (a Hájek estimator) corrects that. Error of the accuracy estimate against the model's true accuracy on all the traffic, in points:</p>
+        <div id="bias"></div>
+      </section>
+    </main>
+    <footer>Built by <a href="https://github.com/umer-78">Umer Hashmi</a> · Messages from <a href="https://github.com/PolyAI-LDN/task-specific-datasets">Banking77</a> (PolyAI, CC BY 4.0), downloaded at run time · Embeddings: bge-small-en-v1.5 (BAAI, MIT)</footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
