@@ -1,5 +1,7 @@
 # eval-dataset-generator
 
+[![CI](https://github.com/umer-78/eval-dataset-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/umer-78/eval-dataset-generator/actions/workflows/ci.yml)
+
 [![Eval Dataset Generator: the live demo](.github/preview.jpg)](https://umer-78.github.io/eval-dataset-generator/)
 
 **Live demo:** https://umer-78.github.io/eval-dataset-generator/ (three ways to spend a labelling budget, and why every case carries a weight)
@@ -58,3 +60,7 @@ python -m evalgen.demo    # rebuild the live demo's data in docs/
 ```
 
 Banking77 and the bge-small model, each pinned by SHA-256, are downloaded on first use into `~/.cache/evalgen`; nothing is committed.
+
+## Licence
+
+MIT licence (see [LICENSE](LICENSE)). The data it evaluates (Banking77 (CC BY 4.0) and the bge-small model) keeps its own licence and is downloaded when you run it.
