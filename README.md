@@ -1,5 +1,7 @@
 # eval-dataset-generator
 
+[![Eval Dataset Generator: the live demo](.github/preview.jpg)](https://umer-78.github.io/eval-dataset-generator/)
+
 **Live demo:** https://umer-78.github.io/eval-dataset-generator/ (three ways to spend a labelling budget, and why every case carries a weight)
 
 It turns production LLM logs into an evaluation set that is worth labelling:
