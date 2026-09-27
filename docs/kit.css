@@ -99,3 +99,12 @@ table.heat th { text-align: center; }
 .sname { font-size: 14px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .strack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--surface-2); }
 .strack span { display: block; height: 100%; }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px; }
+.box.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+table.kv { font-size: 13px; }
+table.kv th { text-transform: none; letter-spacing: 0; font-size: 12.5px; width: 40%; padding: 4px 8px 4px 0; }
+table.kv td { padding: 4px 0; overflow-wrap: anywhere; }
+button.step { cursor: pointer; color: var(--text); }
+.btn:disabled { opacity: .45; cursor: default; }
+input.text { flex: 1 1 280px; min-width: 0; font: 15px var(--font); color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; }
+.cropbox > div { border: 1px solid var(--line); border-radius: 8px; background-color: #fff; max-width: 100%; }
