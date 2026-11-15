@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" data-scene="clusters">
+<html lang="en" data-scene="evalset" data-look="manrope" data-hero="band" data-card="rail" data-motif="plain" data-backdrop="dust">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eval Dataset Generator · Umer Hashmi</title>
   <meta name="description" content="Turning production logs into a versioned evaluation set: deduplicate, cluster, and spend a labelling budget where the model fails, with weights that keep the accuracy estimate honest.">
-  <meta name="theme-color" content="#7c3aed">
+  <meta name="theme-color" content="#078187">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Umer Hashmi · projects">
   <meta property="og:title" content="Eval Dataset Generator · Umer Hashmi">
@@ -16,10 +16,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" id="fx-fonts">
   <link rel="stylesheet" href="kit.css">
   <link rel="stylesheet" href="fx.css">
   <style>:root { --accent: #7c3aed; --fx-2: #06b6d4; --fx-3: #f59e0b; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #c4b5fd; --on-accent: #0f0e0c; } }</style>
+<style id="fx-look">:root[data-look] { --font: 'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; --fx-display: 'Manrope', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --fx-display-weight: 800; --fx-tracking: -0.035em; --fx-title-case: none; --fx-radius: 22px; --fx-hero-radius: 30px; --fx-control-radius: 999px; --accent: #078187; --accent-hover: #086e73; --accent-soft: #dcf8fa; --accent-glow: rgb(7 129 135 / 0.16); --on-accent: #ffffff; --fx-2: #b07a13; --fx-3: #8594fb; --bg: #f1fcfc; --bg-elevated: #fafeff; --surface: #fbffff; --surface-2: #e9f7f7; --surface-3: #e0efef; --border: #d1e2e3; --border-strong: #b6c8c9; --line: #d1e2e3; }
+@media (prefers-color-scheme: dark) { :root[data-look]:not([data-theme="light"]) { --accent: #1baeb6; --accent-hover: #24c3cb; --accent-soft: rgb(27 174 182 / 0.14); --accent-glow: rgb(27 174 182 / 0.2); --on-accent: #001517; --fx-2: #e3a438; --fx-3: #acb9fc; --bg: #041213; --bg-elevated: #09191a; --surface: #0b1d1e; --surface-2: #132526; --surface-3: #1d2f30; --border: #243334; --border-strong: #364647; --line: #243334; } }
+:root[data-look][data-theme="dark"] { --accent: #1baeb6; --accent-hover: #24c3cb; --accent-soft: rgb(27 174 182 / 0.14); --accent-glow: rgb(27 174 182 / 0.2); --on-accent: #001517; --fx-2: #e3a438; --fx-3: #acb9fc; --bg: #041213; --bg-elevated: #09191a; --surface: #0b1d1e; --surface-2: #132526; --surface-3: #1d2f30; --border: #243334; --border-strong: #364647; --line: #243334; }</style>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" data-fx>
+<link rel="modulepreload" href="fx3d.js" data-fx>
 </head>
 <body>
   <div class="wrap">
